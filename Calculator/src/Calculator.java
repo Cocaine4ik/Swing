@@ -6,18 +6,17 @@ import javax.swing.event.*;
 
 import Buttons.*;
 
-public class Calculator implements ActionListener, KeyListener{
+public class Calculator{
 
-	
-	static final int n = 4;
-	static final int k = 6;
+	Double res;
+	Double res1;
 	
 	String textField= "";
 	
 	JTextField mainScreen;
 	
 	JButton bC, bNegAndPos, bPercent,
-	bDivision, bMulti, bMinus, bPlus, bEqual;
+	bDivision, bMulti, bMinus, bPlus, bRes;
 	
 	JButton b1, b2, b3, b4, b5, b6, b7,
 	b8, b9, b0, bComma;
@@ -38,7 +37,7 @@ public class Calculator implements ActionListener, KeyListener{
 		fScreen = new Font("Comic Sans MS", Font.BOLD, 48);
 		
 		// First row. Main Screen
-		mainScreen = new JTextField(textField);
+		mainScreen = new JTextField();
 		mainScreen.setBounds(10, 20, 230, 50);
 		mainScreen.setBackground(new Color(0, 0, 0));
 		mainScreen.setForeground(new Color(255, 255, 255));
@@ -123,8 +122,8 @@ public class Calculator implements ActionListener, KeyListener{
 		bComma.setBounds(130, 320, 50, 50);
 			
 		// Equal Button styles and options
-		bEqual = new BlueRoundButton("=");
-		bEqual.setBounds(190, 320, 50, 50);
+		bRes = new BlueRoundButton("=");
+		bRes.setBounds(190, 320, 50, 50);
 		
 		frame.add(mainScreen);
 	
@@ -146,32 +145,217 @@ public class Calculator implements ActionListener, KeyListener{
 		frame.add(bPlus);
 		frame.add(b0);
 		frame.add(bComma);
-		frame.add(bEqual);
-	}
+		frame.add(bRes);
+				
+		b1.addActionListener(new ActionListener() {
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 1);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
 		
-	}
-	
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+		b2.addActionListener(new ActionListener() {
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 2);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
 		
-	}
+		b3.addActionListener(new ActionListener() {
 
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 3);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
 		
-	}
+		b4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 4);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		b5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 5);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		
+		b6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 6);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		b7.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 7);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		b8.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 8);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		b9.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 9);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		b0.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				mainScreen.setText(mainScreen.getText() + 0);
+				if (res == null) {
+					res = Double.valueOf(mainScreen.getText());
+				}
+				else {
+					res1 = Double.valueOf(mainScreen.getText());
+				}
+				
+			}
+			
+		});
+		
+		bPlus.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent ae) {
+			res = Double.valueOf(mainScreen.getText());
+			textField = "+";
+			}			
+		});
+		
+		bMinus.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent ae) {
+			res = Double.valueOf(mainScreen.getText());
+			textField = "-";
+			}			
+		});
+		
+		bMulti.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent ae) {
+				res = Double.valueOf(mainScreen.getText());
+				textField = "*";
+			}
+		});
+		
+		bDivision.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent ae) {
+				res = Double.valueOf(mainScreen.getText());
+				textField = "/";
+			}
+		});
+		bRes.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent ae) {
+				// TODO Auto-generated method stub
+				double num = Double.valueOf(res);
+				double num1 = Double.valueOf(res1);
+				String tf = textField;
+				
+				MethodCalc mc = new MethodCalc();
+				String Result = String.valueOf(mc.calc(num, tf, num1));
+				mainScreen.setText(Result);
+				
+			}
+		});
+}
+
 	public static void main(String args[]) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {

@@ -17,11 +17,6 @@ public class RoundButton extends JButton {
     size.width = size.height = Math.max(size.width, 
       size.height);
     setPreferredSize(size);
-
-// This call causes the JButton not to paint 
-   // the background.
-// This allows us to paint a round background.
-    setContentAreaFilled(false);
     
     // Set off all borders
     setBorderPainted(false);
