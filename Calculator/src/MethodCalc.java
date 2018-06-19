@@ -33,6 +33,8 @@ public class MethodCalc {
 				res = 0;
 			break;
 			
+			default: res = 0;
+			
 			// clear field
 		case "C" :
 			res = 0;
