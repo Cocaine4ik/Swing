@@ -1,9 +1,13 @@
+package Buttons;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.*;
 
 public class RoundButton extends JButton {
+	
+	Font fScreen, fButton;
+	
   public RoundButton(String label) {
     super(label);
 
@@ -26,6 +30,10 @@ public class RoundButton extends JButton {
 	
 	setBackground(new Color(59, 59, 59));
 	setForeground(new Color(255, 255, 255));
+	fScreen = new Font("Comic Sans MS", Font.BOLD, 48);
+	fButton = new Font("Comic Sans MS", Font.BOLD, 20);
+	
+	setFont(fButton);
   }
 
 // Paint the round background and label.
