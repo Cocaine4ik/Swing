@@ -12,12 +12,14 @@ import CalcInterface.CalcPanel;
 
 public class Calculator implements ActionListener{
 
-	boolean flag = true;
+	boolean flag = true; // if we are calculating flag is true, else false
+	double res = 0; // variable for calculating result storage
 	
-	double res = 0;
-	
+	// string through we are creating buttons
 	String bNames = "C±%/789x456-123+0√.=";
+	//
 	String op = "=";
+	
 	JTextField display;
 	JPanel panel;
 	JButton button;
