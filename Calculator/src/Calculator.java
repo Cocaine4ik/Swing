@@ -21,9 +21,7 @@ public class Calculator implements ActionListener{
 	JTextField display;
 	JPanel panel;
 	JButton button;
-	CalcOp cOp;
-//	Font fDisplay;
-	
+	CalcOp cOp;	
 	Calculator() {
 		
 		// Create main frame
@@ -53,32 +51,33 @@ public class Calculator implements ActionListener{
 }
 	
 	public void actionPerformed(ActionEvent ae) {
+		
 		String gAC = ae.getActionCommand();
+    	cOp = new CalcOp();
+        double x = 0;
+        
 		if(gAC.charAt(0) >= '0' && gAC.charAt(0) <= '9' || gAC.equals(".")) {
+			
 	        if(flag)
 	        	 display.setText(gAC);
 	        else
 	        	display.setText(display.getText() + gAC);
         	flag = false;
 		        }
-		else {
-			if (flag) {
-		        if (gAC.equals("-")) {
-		          display.setText(gAC);
-		         flag = false;
-		        }
-		        else
-		          op = gAC;
-		      } else {
-		    	cOp = new CalcOp();
-		        double x = Double.parseDouble(display.getText());
+		
+		else if(gAC.equals("C")) {		
+				gAC = "";
+				res = 0;
+				display.setText(gAC);
+		}
+		else{
+		        x = Double.parseDouble(display.getText());
 		        res = cOp.Calculate(op, x, res);
 		        display.setText("" + res);
 		        op = gAC;
 		        flag = true;
 		      }
 		}		
-	}
 	
 	public static void main(String args[]) {
 		SwingUtilities.invokeLater(new Runnable() {
