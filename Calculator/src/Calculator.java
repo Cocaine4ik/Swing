@@ -69,6 +69,7 @@ public class Calculator implements ActionListener{
 		
 		else if(gAC.equals("C")) {		
 				gAC = "";
+				op = "";
 				res = 0;
 				display.setText(gAC);
 		}
